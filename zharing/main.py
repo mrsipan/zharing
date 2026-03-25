@@ -57,8 +57,8 @@ def app(environ, start_response):
             )
 
         while True:
-            msg = uwsgi.websocket_recv()
-            uwsgi.websocket_send(msg)
+            chk = uwsgi.websocket_recv()
+            uwsgi.websocket_send(chk)
     else:
         start_response(
             "400 Bad Request", [("Content-Type", "text/plain")]
